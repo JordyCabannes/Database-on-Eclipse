@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- property name="connection.url">jdbc:mysql://localhost:3306/baseTP2</property-->
+        <property name="connection.url">jdbc:mysql://localhost:3306/baseTP2</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password"></property>
+        
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+        
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+        
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        
+        <!-- Quelques autres options: validate, create (effacer et recréer le schéma à chaque exécution), update (mettre à jour le schéma si nécessaire) -->
+        <property name="hbm2ddl.auto">create</property>
+ 
+ 		
+ 		<mapping class="tables.Adresse"/>
+ 		<mapping class="tables.Personne_Contact"/>
+ 		<mapping class="tables.Employe_Affectation_Projet"/>
+ 		<mapping class="tables.Employe_Affectation_ProjetPK"/>
+ 		<mapping class="tables.Employe"/>
+ 		<mapping class="tables.Entreprise_Faire_Affaire"/>
+ 	 	<mapping class="tables.Entreprise_Faire_AffairePK"/>
+ 		<mapping class="tables.Entreprise"/>
+ 		<mapping class="tables.Projet"/>
+ 		<mapping class="tables.Service"/>
+ 		<mapping class="tables.Telephone"/>
+ 		
+ 			
+		
+    </session-factory>
+</hibernate-configuration>
